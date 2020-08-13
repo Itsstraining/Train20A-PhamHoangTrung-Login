@@ -1,0 +1,21 @@
+<p>
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+        <span>Unnamed</span>
+        <span class="example-spacer"></span>
+        <h5 *ngIf="service.user">{{service.user.displayName}}</h5>
+        <button *ngIf="!service.user" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" (click)="service.login()">
+        <mat-icon>login</mat-icon>
+      </button>
+        <!-- <a routerLink="signup" *ngIf="!service.user"></a>
+        <mat-icon>assignment</mat-icon> -->
+        <button (click)="service.signup()" mat-icon-button class=" example-icon " aria-label="Example icon-button with share icon ">
+          <mat-icon>clear</mat-icon>
+        </button>
+        <button *ngIf="service.user" (click)="service.logout()" mat-icon-button class=" example-icon " aria-label="Example icon-button with share icon ">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-toolbar>
+</p>
